@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class LoginSystem {
+    public static void main(String[] args) {
+        String validUsername = "Admin";
+        String validPassword = "Password123";
+
+        Scanner scanner = new Scanner(System.in);
+
+  
+        System.out.print("Enter your username: ");
+        String inputUsername = scanner.nextLine().trim();
+        System.out.print("Enter your password: ");
+        String inputPassword = scanner.nextLine().trim(); 
+   
+        if (validUsername.equalsIgnoreCase(inputUsername) && validPassword.equals(inputPassword)) {
+            System.out.println("Login successful! Welcome " + inputUsername + ".");
+        } else {
+            System.out.println("Invalid username or password. Please try again.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+import java.util.Scanner;
+
+public class TextEditor {
+    public static void main(String[] args) {
+        
+        String text = "The quick brown fox jumps over the lazy dog. The fox is clever and quick.";
+
+        System.out.println("Original Text:");
+        System.out.println(text);
+
+       
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("\nEnter the word you want to find: ");
+        String findWord = scanner.nextLine();
+
+        System.out.print("Enter the replacement word: ");
+        String replaceWord = scanner.nextLine();
+
+        
+        if (text.matches(".*\\b" + findWord + "\\b.*")) {
+       
+            String updatedText = text.replaceAll("\\b" + findWord + "\\b", replaceWord);
+
+            System.out.println("\nUpdated Text:");
+            System.out.println(updatedText);
+        } else {
+            System.out.println("\nThe word '" + findWord + "' was not found in the text.");
+        }
+
+       
+        scanner.close();
+    }
+}
